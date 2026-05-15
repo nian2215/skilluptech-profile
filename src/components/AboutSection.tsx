@@ -82,8 +82,8 @@ export default function AboutSection() {
             transition={{ duration: 0.8, ease: 'easeOut' as const }}
           >
             <div className="flex items-center gap-4 mb-8 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.07]">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-2xl font-black shadow-xl shadow-cyan-500/30 shrink-0">
-                ن
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-sm font-black shadow-xl shadow-cyan-500/30 shrink-0">
+                N.N
               </div>
               <div>
                 <p className="font-black text-white text-lg">{t('name')}</p>
