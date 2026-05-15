@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
@@ -40,22 +40,26 @@ export default function AboutSection() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   const values = [
-    { icon: 'âš¡', title: t('val1_title'), desc: t('val1_desc') },
-    { icon: 'ðŸš€', title: t('val2_title'), desc: t('val2_desc') },
-    { icon: 'ðŸ¤', title: t('val3_title'), desc: t('val3_desc') },
+    { icon: '⚡', title: t('val1_title'), desc: t('val1_desc') },
+    { icon: '🚀', title: t('val2_title'), desc: t('val2_desc') },
+    { icon: '🤝', title: t('val3_title'), desc: t('val3_desc') },
+  ]
+
+  const stats = [
+    { value: 3,  suffix: '+', label: t('stat_projects') },
+    { value: 10, suffix: '+', label: t('stat_clients')  },
+    { value: 3,  suffix: '+', label: t('stat_years')    },
   ]
 
   return (
     <section id="about" ref={ref} className="relative py-24 sm:py-32 px-4 overflow-hidden">
 
-      {/* Background accent */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute start-0 top-1/2 -translate-y-1/2 w-[300px] h-[600px] bg-cyan-600/5 blur-[100px] rounded-full" />
       </div>
 
       <div className="relative max-w-6xl mx-auto">
 
-        {/* Section header */}
         <motion.div
           initial="hidden" animate={inView ? 'show' : 'hidden'} variants={stagger}
           className="text-center mb-16"
@@ -72,23 +76,21 @@ export default function AboutSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left â€” text + avatar */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: 'easeOut' as const }}
           >
-            {/* Avatar card */}
             <div className="flex items-center gap-4 mb-8 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.07]">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-2xl font-black shadow-xl shadow-cyan-500/30 shrink-0">
-                Ù†
+                ن
               </div>
               <div>
-                <p className="font-black text-white text-lg">Ù†ÙŠØ§Ù† Ø¹Ø¨Ø¯Ø§Ù„Ù„Ù‡</p>
-                <p className="text-sm text-gray-500">Ù…Ø·ÙˆÙ‘Ø± Ø¨Ø±Ù…Ø¬ÙŠØ§Øª Â· Ù…Ø¤Ø³Ø³ SkillUpTech</p>
+                <p className="font-black text-white text-lg">{t('name')}</p>
+                <p className="text-sm text-gray-500">{t('role')}</p>
                 <div className="flex items-center gap-1.5 mt-1">
                   <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <span className="text-xs text-green-400">Ù…ØªØ§Ø­ Ù„Ù„Ù…Ø´Ø§Ø±ÙŠØ¹</span>
+                  <span className="text-xs text-green-400">{t('available')}</span>
                 </div>
               </div>
             </div>
@@ -97,13 +99,8 @@ export default function AboutSection() {
               {t('body')}
             </p>
 
-            {/* Stats row */}
             <div className="grid grid-cols-3 gap-4">
-              {[
-                { value: 3, suffix: '+', label: 'Ù…Ø´Ø±ÙˆØ¹' },
-                { value: 10, suffix: '+', label: 'Ø¹Ù…ÙŠÙ„' },
-                { value: 3, suffix: '+', label: 'Ø³Ù†Ø©' },
-              ].map((s, i) => (
+              {stats.map((s, i) => (
                 <div key={i} className="text-center p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                   <p className="text-2xl font-black text-white">
                     <Counter target={s.value} suffix={s.suffix} />
@@ -114,7 +111,6 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right â€” value cards */}
           <motion.div
             initial="hidden" animate={inView ? 'show' : 'hidden'} variants={stagger}
             className="space-y-4"
@@ -135,4 +131,3 @@ export default function AboutSection() {
     </section>
   )
 }
-

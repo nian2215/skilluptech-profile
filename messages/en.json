@@ -27,7 +27,13 @@
     "val2_title": "Fast Delivery",
     "val2_desc": "From idea to product in the shortest time possible",
     "val3_title": "True Partnership",
-    "val3_desc": "We understand your goals and build what actually serves your business"
+    "val3_desc": "We understand your goals and build what actually serves your business",
+    "name": "Nian Abdullah",
+    "role": "Software Developer · Founder of SkillUpTech",
+    "available": "Available for projects",
+    "stat_projects": "Projects",
+    "stat_clients": "Clients",
+    "stat_years": "Years"
   },
   "projects": {
     "badge": "Projects",
