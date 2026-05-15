@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang={locale} dir={dir} className={`${geist.variable} ${tajawal.variable} scroll-smooth`}>
-      <body className={`${fontCls} bg-[#030303] text-white antialiased`}>
+      <body className={`${fontCls} bg-[#FAFAFA] text-[#0F0F0F] antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

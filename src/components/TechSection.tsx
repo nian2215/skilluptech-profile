@@ -5,18 +5,18 @@ import { motion, useInView } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
 const techs = [
-  { name: 'Next.js',    icon: '▲',  color: 'text-white' },
-  { name: 'React',      icon: '⚛',  color: 'text-cyan-400' },
-  { name: 'TypeScript', icon: 'TS', color: 'text-blue-400' },
-  { name: 'Tailwind',   icon: '🌊', color: 'text-sky-400' },
-  { name: 'Supabase',   icon: '⚡', color: 'text-green-400' },
-  { name: 'PostgreSQL', icon: '🐘', color: 'text-blue-300' },
-  { name: 'Vercel',     icon: '▲',  color: 'text-white' },
-  { name: 'Framer',     icon: '🎭', color: 'text-purple-400' },
-  { name: 'Stripe',     icon: '💳', color: 'text-indigo-400' },
-  { name: 'WhatsApp',   icon: '💬', color: 'text-green-500' },
-  { name: 'Git',        icon: '🔀', color: 'text-orange-400' },
-  { name: 'Node.js',    icon: '🟢', color: 'text-green-400' },
+  { name: 'Next.js',    color: 'bg-black text-white' },
+  { name: 'React',      color: 'bg-cyan-50 text-cyan-700 border border-cyan-100' },
+  { name: 'TypeScript', color: 'bg-blue-600 text-white' },
+  { name: 'Tailwind',   color: 'bg-sky-50 text-sky-700 border border-sky-100' },
+  { name: 'Supabase',   color: 'bg-green-600 text-white' },
+  { name: 'PostgreSQL', color: 'bg-blue-50 text-blue-700 border border-blue-100' },
+  { name: 'Vercel',     color: 'bg-black text-white' },
+  { name: 'Framer',     color: 'bg-purple-50 text-purple-700 border border-purple-100' },
+  { name: 'Stripe',     color: 'bg-indigo-600 text-white' },
+  { name: 'WhatsApp',   color: 'bg-green-50 text-green-700 border border-green-100' },
+  { name: 'Git',        color: 'bg-orange-50 text-orange-700 border border-orange-100' },
+  { name: 'Node.js',    color: 'bg-lime-600 text-white' },
 ]
 
 export default function TechSection() {
@@ -25,40 +25,37 @@ export default function TechSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="relative py-20 px-4 overflow-hidden">
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-      <div className="relative max-w-6xl mx-auto">
+    <section ref={ref} className="relative py-20 px-4 bg-[#FAFAFA] border-t border-gray-100">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block text-xs font-semibold text-blue-600 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full mb-4">
             {t('badge')}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black tracking-tight">{t('title')}</h2>
+          <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-[#0F0F0F]">{t('title')}</h2>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3"
+          className="flex flex-wrap justify-center gap-2.5"
         >
           {techs.map((tech, i) => (
-            <motion.div
+            <motion.span
               key={tech.name}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: i * 0.05, duration: 0.4, type: 'spring', stiffness: 200 }}
-              whileHover={{ scale: 1.08, y: -3 }}
-              className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-white/[0.07] bg-white/[0.03] hover:border-white/[0.15] hover:bg-white/[0.06] transition-all duration-200 cursor-default"
+              transition={{ delay: i * 0.04, duration: 0.3 }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              className={`px-4 py-2 rounded-full text-sm font-bold cursor-default ${tech.color}`}
             >
-              <span className={`text-base font-bold ${tech.color}`}>{tech.icon}</span>
-              <span className="text-sm font-semibold text-gray-300">{tech.name}</span>
-            </motion.div>
+              {tech.name}
+            </motion.span>
           ))}
         </motion.div>
       </div>
