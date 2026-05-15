@@ -12,13 +12,15 @@ const fadeUp = {
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } }
 
 type Project = {
-  title: string
-  desc:  string
-  tags:  string[]
-  href?: string
-  live:  boolean
-  color: string
-  label: string
+  title:     string
+  desc:      string
+  tags:      string[]
+  href?:     string
+  live:      boolean
+  color:     string
+  label:     string
+  liveLabel: string
+  soonLabel: string
 }
 
 function ProjectCard({ project }: { project: Project }) {
@@ -53,13 +55,13 @@ function ProjectCard({ project }: { project: Project }) {
         {project.live ? (
           <a href={project.href} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors w-fit group/link">
-            <span>Visit Project</span>
+            <span>{project.liveLabel}</span>
             <ArrowUpRight size={14} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
           </a>
         ) : (
           <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-400">
             <Clock size={12} />
-            Coming Soon
+            {project.soonLabel}
           </span>
         )}
       </div>
@@ -72,32 +74,41 @@ export default function ProjectsSection() {
   const ref    = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
+  const live = t('live')
+  const soon = t('soon')
+
   const projects: Project[] = [
     {
-      title: t('p1_title'),
-      desc:  t('p1_desc'),
-      tags:  [t('p1_tag1'), t('p1_tag2'), t('p1_tag3'), 'Supabase', 'TypeScript'],
-      href:  'https://salon.skilluptech.app',
-      live:  true,
-      color: 'bg-gradient-to-br from-blue-500 to-cyan-500',
-      label: '01',
+      title:     t('p1_title'),
+      desc:      t('p1_desc'),
+      tags:      [t('p1_tag1'), t('p1_tag2'), t('p1_tag3'), 'Supabase', 'TypeScript'],
+      href:      'https://salon.skilluptech.app',
+      live:      true,
+      color:     'bg-gradient-to-br from-blue-500 to-cyan-500',
+      label:     '01',
+      liveLabel: live,
+      soonLabel: soon,
     },
     {
-      title: t('p2_title'),
-      desc:  t('p2_desc'),
-      tags:  ['SaaS', 'Next.js', 'TBD'],
-      live:  false,
-      color: 'bg-gradient-to-br from-violet-500 to-indigo-500',
-      label: '02',
+      title:     t('p2_title'),
+      desc:      t('p2_desc'),
+      tags:      ['SaaS', 'Next.js', 'TBD'],
+      live:      false,
+      color:     'bg-gradient-to-br from-violet-500 to-indigo-500',
+      label:     '02',
+      liveLabel: live,
+      soonLabel: soon,
     },
     {
-      title: t('p3_title'),
-      desc:  t('p3_desc'),
-      tags:  ['Your Idea', 'Custom'],
-      href:  '#contact',
-      live:  true,
-      color: 'bg-gradient-to-br from-amber-400 to-orange-500',
-      label: '03',
+      title:     t('p3_title'),
+      desc:      t('p3_desc'),
+      tags:      [t('p3_tag1'), t('p3_tag2')],
+      href:      '#contact',
+      live:      true,
+      color:     'bg-gradient-to-br from-amber-400 to-orange-500',
+      label:     '03',
+      liveLabel: live,
+      soonLabel: soon,
     },
   ]
 
