@@ -24,15 +24,26 @@ type Project = {
 }
 
 function ProjectCard({ project }: { project: Project }) {
+  const Wrapper = project.live ? motion.a : motion.div
+  const wrapperProps = project.live
+    ? { href: project.href, target: '_blank', rel: 'noopener noreferrer' }
+    : {}
+
   return (
-    <motion.div
+    <Wrapper
+      {...(wrapperProps as object)}
       variants={fadeUp}
       whileHover={{ y: -4 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className="group flex flex-col rounded-2xl border border-gray-100 bg-white hover:border-gray-200 hover:shadow-md transition-all duration-300 overflow-hidden"
+      className="group flex flex-col rounded-2xl border border-gray-100 bg-white hover:border-gray-200 hover:shadow-md transition-all duration-300 overflow-hidden cursor-pointer"
     >
-      <div className={`h-40 ${project.color} flex items-center justify-center`}>
+      <div className={`h-40 ${project.color} flex items-center justify-center relative`}>
         <span className="text-5xl font-black text-white/20 select-none">{project.label}</span>
+        {project.live && (
+          <div className="absolute top-3 end-3 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+            <ArrowUpRight size={16} className="text-white" />
+          </div>
+        )}
       </div>
 
       <div className="p-6 flex flex-col flex-1">
@@ -53,11 +64,10 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {project.live ? (
-          <a href={project.href} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors w-fit group/link">
+          <span className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 w-fit">
             <span>{project.liveLabel}</span>
-            <ArrowUpRight size={14} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-          </a>
+            <ArrowUpRight size={14} />
+          </span>
         ) : (
           <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-400">
             <Clock size={12} />
@@ -65,7 +75,7 @@ function ProjectCard({ project }: { project: Project }) {
           </span>
         )}
       </div>
-    </motion.div>
+    </Wrapper>
   )
 }
 
