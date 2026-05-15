@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "Start a Project"
+  },
+  "hero": {
+    "badge": "Available for new projects",
+    "title_1": "We Turn Your Ideas",
+    "title_2": "Into Digital Products",
+    "subtitle": "We build SaaS applications and custom software for Arab businesses — with modern tech and professional design.",
+    "cta_primary": "Explore Projects",
+    "cta_secondary": "Get in Touch",
+    "stat_projects": "Projects",
+    "stat_clients": "Happy Clients",
+    "stat_years": "Years Exp.",
+    "scroll": "Scroll down"
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "We Build Software That Solves Real Problems",
+    "body": "Nian Abdullah — a developer specialised in building SaaS products from scratch. We work with small and medium businesses across the Arab world to turn their ideas into scalable digital products.",
+    "val1_title": "Uncompromising Quality",
+    "val1_desc": "Clean code, high performance, exceptional UX",
+    "val2_title": "Fast Delivery",
+    "val2_desc": "From idea to product in the shortest time possible",
+    "val3_title": "True Partnership",
+    "val3_desc": "We understand your goals and build what actually serves your business"
+  },
+  "projects": {
+    "badge": "Projects",
+    "title": "What We've Built",
+    "subtitle": "Every project solved a real problem for a real business",
+    "live": "Visit Project",
+    "soon": "Coming Soon",
+    "p1_title": "SkillUpTech Salon",
+    "p1_desc": "A full SaaS platform for salon management — bookings, customers, staff, courses, and automated WhatsApp notifications.",
+    "p1_tag1": "SaaS",
+    "p1_tag2": "Salons",
+    "p1_tag3": "Next.js",
+    "p2_title": "Coming Soon",
+    "p2_desc": "We're working on a new platform that will transform how another industry operates in the region. Stay tuned.",
+    "p3_title": "Your Project Here",
+    "p3_desc": "Have an idea for a project? We'd love to hear it. Get in touch and let's build something great together."
+  },
+  "services": {
+    "badge": "Services",
+    "title": "What We Offer",
+    "subtitle": "From idea to product — we guide you every step of the way",
+    "s1_title": "SaaS Application Development",
+    "s1_desc": "Full SaaS platforms with user systems, subscriptions, dashboards, and APIs.",
+    "s2_title": "Website Development",
+    "s2_desc": "Professional, fast, and responsive websites built with the latest technologies.",
+    "s3_title": "Database Architecture",
+    "s3_desc": "Scalable database design with strict security policies (RLS).",
+    "s4_title": "Technical Consulting",
+    "s4_desc": "Help choosing the right technology and building a clear roadmap for your project.",
+    "s5_title": "API Integrations",
+    "s5_desc": "Connect your platform to external services — WhatsApp, Stripe, Supabase, and more.",
+    "s6_title": "Maintenance & Support",
+    "s6_desc": "Ongoing monitoring after launch to ensure your product keeps running smoothly."
+  },
+  "tech": {
+    "badge": "Tech Stack",
+    "title": "Tools We Build With"
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Got a Project Idea?",
+    "subtitle": "We're here to listen. Tell us about your idea and we'll get back to you within 24 hours.",
+    "whatsapp": "Message us on WhatsApp",
+    "email": "Send us an Email",
+    "or": "or",
+    "footer": "All rights reserved © SkillUpTech"
+  }
+}
