@@ -26,7 +26,7 @@ function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
 }
 
 const stagger = {
@@ -76,7 +76,7 @@ export default function AboutSection() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: 'easeOut' as const }}
           >
             {/* Avatar card */}
             <div className="flex items-center gap-4 mb-8 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.07]">

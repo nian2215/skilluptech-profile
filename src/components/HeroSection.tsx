@@ -81,7 +81,7 @@ function StatItem({ value, label, delay }: { value: string; label: string; delay
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.6, ease: 'easeOut' }}
+      transition={{ delay, duration: 0.6, ease: 'easeOut' as const }}
       className="text-center"
     >
       <p className="text-3xl sm:text-4xl font-black bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">{value}</p>
@@ -96,7 +96,7 @@ const container = {
 }
 const word = {
   hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
-  show:   { opacity: 1, y: 0,  filter: 'blur(0px)', transition: { duration: 0.6, ease: 'easeOut' } },
+  show:   { opacity: 1, y: 0,  filter: 'blur(0px)', transition: { duration: 0.6, ease: 'easeOut' as const } },
 }
 
 export default function HeroSection() {
@@ -139,7 +139,7 @@ export default function HeroSection() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
+          transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' as const }}
           className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-3"
         >
           {t('title_1')}
@@ -205,7 +205,7 @@ export default function HeroSection() {
         <p className="text-[10px] text-gray-600 uppercase tracking-widest">{t('scroll')}</p>
         <motion.div
           animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' as const }}
           className="w-5 h-8 rounded-full border border-white/10 flex items-start justify-center pt-1.5"
         >
           <div className="w-1 h-2 rounded-full bg-cyan-400" />

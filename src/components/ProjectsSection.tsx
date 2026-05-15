@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
 }
 const stagger = {
   hidden: {},
